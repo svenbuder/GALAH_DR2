@@ -1,7 +1,20 @@
 # GALAH_DR2
 In this repository, we describe the most basic routines to use GALAH Data Release 2.
 
-The GALAH collaboration released its second Data Release April 2018. If you have downloaded the file as 'GALAH_DR2.fits', do the following:
+The GALAH collaboration released its second Data Release April 2018. An example X-match with Gaia DR1 could be:
+
+```ruby
+SELECT *
+FROM gaiadr1.gaia_source AS gaia
+INNER JOIN gaiadr1.tmass_best_neighbour AS tmass_xmatch
+	ON gaia.source_id = tmass_xmatch.source_id
+INNER JOIN gaiadr1.tmass_original_valid AS tmass
+	ON tmass.tmass_oid = tmass_xmatch.tmass_oid
+INNER JOIN user_sbuder.galah_dr2 AS galah_dr2
+	ON tmass.designation = galah_dr2.star_id
+```
+
+If you have downloaded the file e.g. as 'GALAH_DR2.fits', do the following:
 
 ```python
 from astropy import table
