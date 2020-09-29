@@ -3,7 +3,7 @@ In this repository, we describe the most basic routines to use GALAH Data Releas
 
 You can download the FITS file of GALAH DR2 from:
 
-https://datacentral.aao.gov.au/teamdata/GALAH/public/
+https://datacentral.org.au/teamdata/GALAH/public/
 
 An example X-match with Gaia DR1 could be:
 
